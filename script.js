@@ -90,17 +90,41 @@ function showToast(message) {
     }, 3000);
 }
 
-// Trigger Confetti with event parameter
-function triggerConfetti(event, message) {
-    let x, y;
-    if (event && event.clientX) {
-        x = event.clientX;
-        y = event.clientY;
-    } else {
-        x = window.innerWidth / 2;
-        y = window.innerHeight / 2;
+// FIXED: Get coordinates from mouse or touch event
+function getEventCoords(event) {
+    // Handle touch events
+    if (event.touches && event.touches.length > 0) {
+        return {
+            x: event.touches[0].clientX,
+            y: event.touches[0].clientY
+        };
     }
-    createConfetti(x, y);
+    // Handle changedTouches for touchend
+    if (event.changedTouches && event.changedTouches.length > 0) {
+        return {
+            x: event.changedTouches[0].clientX,
+            y: event.changedTouches[0].clientY
+        };
+    }
+    // Handle mouse events
+    if (event.clientX !== undefined && event.clientY !== undefined) {
+        return {
+            x: event.clientX,
+            y: event.clientY
+        };
+    }
+    // Fallback to center
+    return {
+        x: window.innerWidth / 2,
+        y: window.innerHeight / 2
+    };
+}
+
+// FIXED: Trigger Confetti with proper mobile support
+function triggerConfetti(event, message) {
+    event.preventDefault();
+    const coords = getEventCoords(event);
+    createConfetti(coords.x, coords.y);
     showToast(message);
 }
 
@@ -132,9 +156,29 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Mobile Menu Toggle
+// FIXED: Mobile menu with touch support
 document.querySelector('.mobile-menu').addEventListener('click', (e) => {
     triggerConfetti(e, '📱 Mobile menu: Also fictional! Try the desktop version.');
+});
+
+// FIXED: Also add touchstart for mobile menu (faster response)
+document.querySelector('.mobile-menu').addEventListener('touchstart', (e) => {
+    e.preventDefault(); // Prevent mouse event from firing
+    triggerConfetti(e, '📱 Mobile menu: Also fictional! Try the desktop version.');
+}, { passive: false });
+
+// FIXED: Add touch support to all buttons with onclick
+document.querySelectorAll('[onclick^="triggerConfetti"]').forEach(btn => {
+    btn.addEventListener('touchstart', function(e) {
+        e.preventDefault(); // Prevent double firing and mouse event
+        // Extract the message from the onclick attribute
+        const onclickAttr = this.getAttribute('onclick');
+        const match = onclickAttr.match(/triggerConfetti\(event,\s*['"`](.+?)['"`]\)/);
+        if (match) {
+            const message = match[1].replace(/\\'/g, "'").replace(/\\"/g, '"');
+            triggerConfetti(e, message);
+        }
+    }, { passive: false });
 });
 
 // Background floating burritos
