@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self';">
+    <title>$BURRITO - The World's First Tasty Meme Coin</title>
+    <link rel="stylesheet" href="styles.css">
+<base target="_blank">
+</head>
+<body>
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">$BURRITO</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#tokenomics">Tokenomics</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <div class="mobile-menu">☰</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🌯 100% Fictional • 0% Nutritional Value</div>
+            <h1>$BURRITO</h1>
+            <p class="hero-tagline">The world's first fully-wrapped, blockchain-based Mexican food experience. Zero calories, infinite memes.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="triggerConfetti(event, '🌯 Imagine buying a burrito that doesn\'t exist!')">Buy $BURRITO</button>
+                <button class="btn btn-secondary" onclick="triggerConfetti(event, '📊 Chart shows: Very tasty, much wow, zero liquidity')">View Chart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>What is $BURRITO?</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p><strong>$BURRITO</strong> is a fictional meme coin created purely for entertainment purposes. It represents the ultimate fusion of cryptocurrency hype and everyone's favorite wrapped delicacy.</p>
+                <p>Unlike real burritos, $BURRITO cannot satisfy hunger, provide protein, or be eaten with hot sauce. However, it CAN provide unlimited meme potential and serve as a perfect example of what a parody crypto project looks like.</p>
+                <ul class="feature-list">
+                    <li>Zero real-world utility (by design)</li>
+                    <li>Maximum meme density per square byte</li>
+                    <li>Guaranteed to not spoil in your fridge</li>
+                    <li>No beans, rice, or guacamole included</li>
+                    <li>100% gluten-free blockchain</li>
+                </ul>
+            </div>
+            <div class="about-visual">🌯</div>
+        </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section id="tokenomics" class="tokenomics">
+        <h2>Tokenomics (Fictional)</h2>
+        <div class="token-grid">
+            <div class="token-card">
+                <div class="token-icon">🔥</div>
+                <div class="token-value">50%</div>
+                <div class="token-label">Salsa Burned<br><small>Sent to the spicy abyss</small></div>
+            </div>
+            <div class="token-card">
+                <div class="token-icon">💧</div>
+                <div class="token-value">30%</div>
+                <div class="token-label">Liquidity Pool<br><small>Hot sauce reserves</small></div>
+            </div>
+            <div class="token-card">
+                <div class="token-icon">👥</div>
+                <div class="token-value">20%</div>
+                <div class="token-label">Community<br><small>Taco Tuesday holders</small></div>
+            </div>
+            <div class="token-card">
+                <div class="token-icon">🌶️</div>
+                <div class="token-value">∞</div>
+                <div class="token-label">Spice Level<br><small>Scoville rating: Blockchain</small></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="roadmap">
+        <h2>The $BURRITO Roadmap</h2>
+
+        <div class="roadmap-item">
+            <div class="roadmap-content">
+                <span class="roadmap-phase">PHASE 1: Q1 2026</span>
+                <div class="roadmap-title">The Tortilla Inception</div>
+                <p>Website launch (this one!), fictional whitepaper written on a napkin, and establishing our non-existent supply chain of digital beans.</p>
+            </div>
+        </div>
+
+        <div class="roadmap-item">
+            <div class="roadmap-content">
+                <span class="roadmap-phase">PHASE 2: Q2 2026</span>
+                <div class="roadmap-title">Guacamole Marketing</div>
+                <p>Spam Twitter with burrito memes, create fake partnerships with imaginary restaurants, and achieve absolutely nothing of financial value.</p>
+            </div>
+        </div>
+
+        <div class="roadmap-item">
+            <div class="roadmap-content">
+                <span class="roadmap-phase">PHASE 3: Q3 2026</span>
+                <div class="roadmap-title">The Great Wrapening</div>
+                <p>Introduce fictional staking rewards (earn more nothing!), launch pretend NFT collection of different burrito fillings.</p>
+            </div>
+        </div>
+
+        <div class="roadmap-item">
+            <div class="roadmap-content">
+                <span class="roadmap-phase">PHASE 4: Q4 2026</span>
+                <div class="roadmap-title">Metaverse Taqueria</div>
+                <p>Open virtual restaurant where you can't eat anything. Finally admit this was all a joke. Keep the memes going anyway.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="community">
+        <h2>Join the Fictional Community</h2>
+        <p style="text-align: center; margin-bottom: 2rem; color: #666;">Connect with other imaginary $BURRITO holders (these buttons don't actually go anywhere)</p>
+
+        <div class="social-grid">
+            <div class="social-btn" onclick="triggerConfetti(event, '🐦 Tweeted: Just bought $BURRITO with my imaginary money! #ToTheGuac')">🐦</div>
+            <div class="social-btn" onclick="triggerConfetti(event, '💬 Joined Discord: 50,000 bots and 3 confused humans discussing salsa preferences')">💬</div>
+            <div class="social-btn" onclick="triggerConfetti(event, '📸 Instagram post: Unboxing my virtual burrito. It\'s empty. Perfect.')">📸</div>
+            <div class="social-btn" onclick="triggerConfetti(event, '🎵 TikTok: Dancing with a burrito to crypto music. 0 views.')">🎵</div>
+            <div class="social-btn" onclick="triggerConfetti(event, '📱 Telegram: Admin posted another meme. Community cheered. Nothing happened.')">📱</div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <button class="faq-question">Is $BURRITO a real cryptocurrency?</button>
+            <div class="faq-answer">
+                <p><strong>Absolutely not.</strong> $BURRITO is a fictional parody coin created for entertainment and educational purposes only. There is no real token, no blockchain, no smart contract, and no actual financial value. Any resemblance to real cryptocurrencies is purely coincidental and probably hilarious.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Can I actually buy $BURRITO tokens?</button>
+            <div class="faq-answer">
+                <p>You cannot buy $BURRITO because it doesn't exist. The "Buy" buttons on this site trigger confetti animations and humorous messages instead of actual transactions. If you want to spend money on burritos, we recommend visiting your local taqueria instead.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">What makes $BURRITO different from real meme coins?</button>
+            <div class="faq-answer">
+                <p>Honestly? Not much in terms of utility. But at least we're honest about being fictional! Real meme coins often have similar levels of actual utility (none), but they involve real money and real risk. $BURRITO is just here for the jokes without the financial ruin.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Will $BURRITO make me rich?</button>
+            <div class="faq-answer">
+                <p>Only in imaginary guacamole. Since $BURRITO doesn't exist, it cannot appreciate in value, generate returns, or pay for your lambo. However, the joy of sharing a good meme with friends? That's priceless (and also free).</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Is this site safe to use?</button>
+            <div class="faq-answer">
+                <p>Yes! This is a static HTML/CSS/JS site with no backend, no database, no wallet connections, and no data collection. It's just a webpage. We implemented basic security practices like CSP headers and avoided external scripts. But remember: safe to visit doesn't mean it's a real investment!</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Who created $BURRITO?</button>
+            <div class="faq-answer">
+                <p>$BURRITO was spontaneously generated as a demonstration of parody web design. It has no team, no founders, and no venture capital backing (shocking, we know). It's simply a digital art project about the absurdity of crypto culture.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>$BURRITO</h3>
+                <p>The tastiest fictional token on the non-existent blockchain. Wrapped with love, filled with memes, served with a side of humor.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Important Links</h3>
+                <p>
+                    <a href="#" onclick="triggerConfetti(event, '📄 Whitepaper: 10 pages of burrito puns and zero technical substance'); return false;">Fictional Whitepaper</a><br>
+                    <a href="#" onclick="triggerConfetti(event, '📈 Chart: A straight line going nowhere'); return false;">Non-Existent Chart</a><br>
+                    <a href="#" onclick="triggerConfetti(event, '🤝 Partners: Absolutely nobody'); return false;">Imaginary Partners</a>
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>
+                    Email: imaginary@burrito.fictional<br>
+                    Address: 123 Blockchain Blvd, Metaverse<br>
+                    Phone: 1-800-NOT-REAL
+                </p>
+            </div>
+        </div>
+
+        <div class="disclaimer-box">
+            <h4>⚠️ PARODY & DISCLAIMER NOTICE</h4>
+            <p>
+                <strong>$BURRITO is a fictional parody project.</strong> This website is created for entertainment, educational, and satirical purposes only. 
+                There is no real $BURRITO token, no actual cryptocurrency, and no investment opportunity. Nothing on this site constitutes financial advice. 
+                The "buy" buttons, social links, and charts are non-functional and trigger animations only. Cryptocurrency investments carry substantial risk; 
+                this site demonstrates the absurdity of meme coin culture without involving real money. By using this site, you acknowledge this is purely fictional content. 
+                <strong>Do not invest money you cannot afford to lose in actual crypto projects.</strong> If you need financial advice, consult a qualified professional, not a burrito website.
+            </p>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 $BURRITO. All rights reserved. | Not a real company. | This is a joke. | Please don't sue us, we're just a burrito.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
